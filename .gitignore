@@ -4,3 +4,5 @@ dist/
 react-banner-animation.zip
 .DS_Store
 Thumbs.db
+
+.vercel
