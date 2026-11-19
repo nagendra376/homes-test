@@ -217,16 +217,6 @@ export default function AboutSection() {
           ))}
         </motion.div>
 
-        {/* Bottom Tag Pill */}
-        <motion.div
-          className="bildora-bottom-tag-wrapper"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <span className="bildora-pill-tag">Our Services</span>
-        </motion.div>
 
       </div>
     </section>
