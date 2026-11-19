@@ -1,0 +1,2304 @@
+/* Fonts extracted from live Framer site */
+@font-face {
+  font-family: 'Special Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/specialgothic/v3/1q2lY5WcG0Fg_v0fHc8BvIZ2537qdm1JEt9N3w2mJykOEnLhliLsitHN4VZ7yS8BPQ.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/BLNB4FAQFNK56DWWNF7PMGTCOTZHOEII/ST3WKSSDMBK2MIQQO3MAVYWLF4FTOLFV/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/OYB4CXKJQXKTNSLJMTDQOIVUL2V5EL7S/WYO2P7DQVV5RNXGMCUO2HL4RJP4VFUAS/6XPIMU23OJVRY676OG5YVJMWEHWICATX.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/5SZVFDB7V52TI6ULVC6J3WQZQCIZVDV5/ODYPSTCUDMKSTYIPTV4CLQ7URIK7XYBJ/YS3VPNVO4B3TOJMEXDGFZQ4TLZGGSRZC.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/HBNTRIISA5MEXGL5WPYI7CV2HIWTDV3Q/YDPDINVT673XLXNSTMLG4JNCZZMVVNPN/Y7SCNZJOT2MW5ADSGOFLDGH4TNL4JCQY.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* CSS Reset & Baseline */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-dark: #080B0F;
+  --color-muted: #4B5B63;
+  --color-label: #191919;
+  --color-card-bg: #F6F6F6;
+  --color-white: #FFFFFF;
+  --font-heading: 'Special Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Switzer', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: auto;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------------------------
+   LENIS SMOOTH SCROLL (IDENTICAL TO FRAMER)
+------------------------------------------------------------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background-color: #C3E5F7;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* App Container */
+.homy-app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--color-white);
+}
+
+.homy-main-flow {
+  display: block;
+  width: 100%;
+  position: relative;
+  min-height: 3000px;
+}
+
+/* -------------------------------------------------------------
+   HEADER / NAVBAR
+------------------------------------------------------------- */
+.homy-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  pointer-events: auto;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.homy-header.is-scrolled {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.homy-header-inner {
+  width: 100%;
+  max-width: 1240px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.homy-brand {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.value-header-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  display: block;
+}
+
+.homy-brand:hover {
+  opacity: 0.85;
+}
+
+.homy-logo-svg {
+  width: 102px;
+  height: 30px;
+  display: block;
+}
+
+.homy-nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.homy-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.homy-nav-item {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-dark);
+  padding: 8px 0 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.homy-nav-item:hover {
+  color: #000000;
+}
+
+.homy-nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--color-dark);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.homy-nav-item:hover .homy-nav-indicator,
+.homy-nav-item.is-active .homy-nav-indicator {
+  width: 100%;
+}
+
+/* Action Button with Arrow Slider */
+.homy-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.homy-btn-black {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 8px 8px 8px 18px;
+  box-shadow: 0 5px 15px rgba(8, 11, 15, 0.18);
+}
+
+.homy-btn-black:hover {
+  background-color: #121922;
+  box-shadow: 0 8px 24px rgba(8, 11, 15, 0.28);
+  transform: translateY(-1px);
+}
+
+.homy-btn-outline {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--color-dark);
+  border: 1px solid rgba(8, 11, 15, 0.15);
+  padding: 12px 22px;
+}
+
+.homy-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(8, 11, 15, 0.3);
+  transform: translateY(-1px);
+}
+
+.homy-btn-arrow-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.homy-btn-arrow-slider {
+  display: flex;
+  width: 56px;
+  position: absolute;
+  left: -28px;
+  top: 0;
+  bottom: 0;
+  align-items: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.homy-arrow-svg {
+  width: 14px;
+  height: 14px;
+  margin: 0 7px;
+  flex-shrink: 0;
+}
+
+.homy-action-btn:hover .homy-btn-arrow-slider {
+  transform: translateX(28px);
+}
+
+/* Mobile Toggle */
+.homy-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 38px;
+  height: 38px;
+  padding: 4px;
+}
+
+.homy-burger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-dark);
+  transition: transform 0.3s ease;
+}
+
+.homy-burger-line.open-top {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.homy-burger-line.open-bottom {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.homy-mobile-drawer {
+  display: none;
+}
+
+/* -------------------------------------------------------------
+   HERO SECTION - STICKY SCROLL PARALLAX (IDENTICAL TO FRAMER)
+------------------------------------------------------------- */
+.homy-hero-section {
+  position: sticky;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 1332px;
+  margin: 0 auto;
+  z-index: 1;
+  background: linear-gradient(180deg, #C3E5F7 0%, #316073 100%);
+  filter: brightness(1.03) contrast(1.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+  padding: 180px 24px 0px;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* Background Animated Canvas with Drift Layers */
+.homy-hero-bg-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.homy-smoke-layer {
+  position: absolute;
+  pointer-events: none;
+}
+
+.homy-smoke-layer.smoke-1 {
+  top: 90px;
+  left: -436px;
+  width: 889px;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.homy-smoke-layer.smoke-2 {
+  top: 700px;
+  left: -958px;
+  width: 1752px;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.homy-smoke-layer.smoke-3 {
+  top: 230px;
+  left: 600px;
+  width: 1116px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.homy-smoke-layer.smoke-4 {
+  top: 20px;
+  right: -415px;
+  width: 881px;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+/* Hero Content - Layer 1 (sits in normal flow; rising villa covers it) */
+.homy-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 0 16px;
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+
+/* Pro Users Pill */
+.homy-users-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 100px;
+  padding: 6px 16px 6px 8px;
+  box-shadow: 0 10px 41px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+  margin-bottom: 6px;
+}
+
+.homy-avatar-stack {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 58px;
+  height: 26px;
+}
+
+.homy-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #FFFFFF;
+  position: absolute;
+  top: 0;
+}
+
+.homy-avatar:nth-child(1) { left: 0px; z-index: 1; }
+.homy-avatar:nth-child(2) { left: 16px; z-index: 2; }
+.homy-avatar:nth-child(3) { left: 32px; z-index: 3; }
+
+.homy-users-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-muted);
+  letter-spacing: -0.01em;
+}
+
+/* Hero Headline */
+.homy-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 6.8vw, 102px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  color: var(--color-dark);
+  margin: 0;
+  max-width: 1100px;
+}
+
+/* Hero Subtitle */
+.homy-hero-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.25vw, 18px);
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--color-muted);
+  max-width: 610px;
+  margin: 6px 0 12px;
+}
+
+/* CTA Container */
+.homy-hero-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 4px 0 0;
+}
+
+/* Mansion Showcase - Layer 2 (z-index: 2; rises UP over text on scroll) */
+.homy-hero-mansion-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1265px;
+  margin: 0 auto;
+  aspect-ratio: 1.54656 / 1;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.homy-hero-mansion-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: visible;
+}
+
+.homy-hero-mansion-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* Bottom Fog Overlays on Mansion Base */
+.homy-mansion-fog-blend {
+  position: absolute;
+  bottom: -40px;
+  left: -8%;
+  width: 116%;
+  height: 280px;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.homy-fog-img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.homy-fog-img.fog-top {
+  bottom: 40px;
+  opacity: 0.92;
+  filter: blur(1px);
+}
+
+.homy-fog-img.fog-bottom {
+  bottom: -20px;
+  opacity: 0.98;
+}
+
+/* -------------------------------------------------------------
+   OUR IMPACT SECTION (STABLE SIBLING, SCROLLS UP OVER HERO)
+------------------------------------------------------------- */
+.homy-impact-section {
+  position: relative;
+  background-color: var(--color-white);
+  padding: 100px 24px 120px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* Top Cloud Fog Transition (floats over mansion as Our Impact approaches) */
+.homy-impact-cloud-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+.homy-cloud-transition {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1330px;
+  height: 464px;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+.homy-cloud-transition.layer-1 {
+  top: -130px;
+  opacity: 1;
+}
+
+.homy-cloud-transition.layer-2 {
+  top: -260px;
+  opacity: 1;
+}
+
+.homy-impact-container {
+  width: 100%;
+  max-width: 1240px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Impact Header */
+.homy-impact-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+.homy-impact-header-left {
+  max-width: 580px;
+}
+
+.homy-impact-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.homy-tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-muted);
+}
+
+.homy-tag-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+.homy-impact-title {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 3.4vw, 48px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+}
+
+.homy-impact-header-right {
+  max-width: 400px;
+  padding-bottom: 8px;
+}
+
+.homy-impact-desc {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.25vw, 18px);
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--color-muted);
+}
+
+/* Bento Grid */
+.homy-impact-bento {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Bento Photo Cards */
+.homy-bento-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  height: 338px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.homy-card-img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.homy-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.homy-photo-card:hover .homy-card-img {
+  transform: scale(1.05);
+}
+
+/* Middle Stats Column */
+.homy-bento-stats-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  height: 338px;
+}
+
+.homy-stat-card {
+  background-color: var(--color-card-bg);
+  border-radius: 12px;
+  padding: 0 28px;
+  height: 107px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  cursor: default;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.homy-stat-number {
+  font-family: var(--font-body);
+  font-size: clamp(36px, 3.2vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+  line-height: 1;
+}
+
+.homy-stat-label {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.5vw, 22px);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-label);
+  text-transform: uppercase;
+}
+
+/* Rolling Odometer Styles */
+.rolling-counter {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.rolling-symbol {
+  display: inline-block;
+  line-height: 1;
+}
+
+.digit-reel-viewport {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.15em;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  min-width: 0.62em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.digit-reel-strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.digit-reel-number {
+  height: 1.15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* -------------------------------------------------------------
+   BILDORA ABOUT SECTION (3D CURVED CYLINDRICAL CAROUSEL)
+------------------------------------------------------------- */
+.bildora-about-section {
+  position: relative;
+  z-index: 10;
+  background-color: #FAFAFA;
+  color: #1F2D3D;
+  padding: 120px 20px 100px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.bildora-about-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Pill Badges ("About Us", "Our Services") */
+.bildora-tag-wrapper,
+.bildora-bottom-tag-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bildora-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(186, 179, 179, 0.12);
+  border: 1px solid rgba(255, 75, 24, 0.2);
+  border-radius: 50px;
+  padding: 6px 20px;
+  color: rgb(255, 75, 24); /* #FF4B18 */
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+/* Center Headline */
+.bildora-heading-wrapper {
+  width: 100%;
+  max-width: 920px;
+  margin: 24px auto 0;
+  text-align: center;
+}
+
+.bildora-heading {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: rgb(31, 45, 61);
+  margin: 0;
+}
+
+/* 3D Curved Cylindrical Panoramic Carousel */
+.bildora-carousel-perspective-viewport {
+  width: 100%;
+  height: 430px;
+  perspective: 700px;
+  -webkit-perspective: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 50px 0 65px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.bildora-carousel-perspective-viewport:active {
+  cursor: grabbing;
+}
+
+.bildora-carousel-cylinder {
+  width: 1400px;
+  height: 370px;
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.bildora-cylinder-column {
+  width: 1400px;
+  height: 300px;
+  position: absolute;
+  left: 0;
+  top: 35px;
+  transform-origin: 700px 150px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.bildora-cylinder-card {
+  width: 260px;
+  height: 370px;
+  border-radius: 20px;
+  overflow: hidden;
+  transform-origin: 130px 185px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  background-color: #f0edea;
+}
+
+.bildora-cylinder-card.card-left {
+  transform: rotateY(90deg);
+}
+
+.bildora-cylinder-card.card-right {
+  transform: rotateY(-90deg);
+}
+
+.bildora-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+/* 4 Stats Grid Row */
+.bildora-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto 56px;
+}
+
+.bildora-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.bildora-stat-num {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(34px, 3.6vw, 48px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: rgb(31, 45, 61);
+  letter-spacing: -0.02em;
+}
+
+.bildora-stat-label {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(38, 37, 37);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive scale for carousel cylinder */
+@media (max-width: 1200px) {
+  .bildora-carousel-perspective-viewport {
+    transform: scale(0.85);
+    margin: 30px 0 45px;
+  }
+}
+
+@media (max-width: 900px) {
+  .bildora-carousel-perspective-viewport {
+    transform: scale(0.68);
+    margin: 15px 0 30px;
+  }
+  .bildora-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .bildora-carousel-perspective-viewport {
+    transform: scale(0.5);
+    margin: 0 0 20px;
+  }
+  .bildora-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* -------------------------------------------------------------
+   SHARED HOMY SECTION HEADER STYLES
+------------------------------------------------------------- */
+.homy-section-header-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 52px;
+}
+
+.homy-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.homy-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.homy-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #6C7D86;
+}
+
+.homy-badge-text {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6C7D86;
+}
+
+.homy-section-title {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(32px, 3.8vw, 48px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #080B0F;
+  margin: 0;
+}
+
+.homy-section-desc {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5A666E;
+  max-width: 380px;
+  margin: 0;
+}
+
+.homy-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 380px;
+}
+
+.homy-explore-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #080B0F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.homy-explore-all-btn:hover {
+  background-color: #222930;
+  transform: translateY(-1px);
+}
+
+/* -------------------------------------------------------------
+   OUR SERVICES SECTION (3-CARD EXPANDING ACCORDION)
+------------------------------------------------------------- */
+.homy-services-section {
+  position: relative;
+  z-index: 10;
+  background-color: #FFFFFF;
+  padding: 110px 24px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.homy-services-container {
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.homy-service-cards-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 100%;
+  min-height: 540px;
+  align-items: stretch;
+}
+
+.homy-service-card {
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.4s ease;
+  will-change: width, flex, transform;
+}
+
+.homy-service-card.card-active {
+  flex: 2.2;
+  background-color: #0C0C0C;
+  color: #FFFFFF;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.16);
+}
+
+.homy-service-card.card-inactive {
+  flex: 1;
+  background-color: #F5F6F8;
+  color: #080B0F;
+}
+
+.homy-service-card.card-inactive:hover {
+  background-color: #EDEDF1;
+}
+
+.homy-card-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.homy-card-inner.active-content {
+  padding: 40px 40px 0;
+  justify-content: space-between;
+}
+
+.homy-card-inner.inactive-content {
+  padding: 40px 32px;
+  justify-content: space-between;
+}
+
+.homy-card-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.homy-card-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.homy-card-category {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: inherit;
+  opacity: 0.65;
+}
+
+.homy-card-heading-active {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.homy-card-heading-inactive {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: #080B0F;
+  margin: 0;
+}
+
+.homy-card-num-large {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(38px, 4.2vw, 54px);
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.homy-card-watermark-num {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(48px, 5.2vw, 68px);
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.12);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.homy-card-bottom-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.homy-card-image-wrap {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  overflow: visible;
+  margin-top: auto;
+}
+
+.homy-service-villa-img {
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.45));
+}
+
+/* -------------------------------------------------------------
+   PROPERTY LISTINGS SECTION (2X2 GRID)
+------------------------------------------------------------- */
+.homy-listings-section {
+  position: relative;
+  z-index: 10;
+  background-color: #FFFFFF;
+  padding: 100px 24px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.homy-listings-container {
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.homy-listings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+.homy-property-card {
+  position: relative;
+  height: 440px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #EAECEF;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.homy-property-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.12);
+}
+
+.homy-property-img-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.homy-property-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.homy-property-card:hover .homy-property-img {
+  transform: scale(1.05);
+}
+
+.homy-property-badge-wrap {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+.homy-property-type-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #FFFFFF;
+  color: #080B0F;
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.homy-property-bottom-glass {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 38px 26px 24px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(8, 11, 15, 0.62) 42%, rgba(8, 11, 15, 0.88) 100%);
+}
+
+.homy-property-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.homy-property-text-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.homy-property-name {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.homy-property-price {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.homy-property-specs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.homy-spec-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.homy-spec-divider {
+  width: 1px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* -------------------------------------------------------------
+   HIGHLIGHTED HOME SECTION & EXPANDING SCROLL STICKY SHOWCASE
+------------------------------------------------------------- */
+.homy-highlighted-section {
+  position: relative;
+  z-index: 10;
+  background-color: #FFFFFF;
+  padding-top: 100px;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.homy-highlighted-header-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Sticky Scroll Track (creates 2400px of scroll space for card zoom) */
+.homy-highlighted-sticky-track {
+  position: relative;
+  width: 100%;
+  height: 2400px;
+  box-sizing: border-box;
+}
+
+/* Sticky Viewport pinned inside the track during scroll */
+.homy-highlighted-sticky-wrap {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* Background Marquee Ticker Layer */
+.homy-ticker-marquee-layer {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  will-change: opacity, transform;
+}
+
+.homy-ticker-stream {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: homyTickerScroll 30s linear infinite;
+  will-change: transform;
+}
+
+@keyframes homyTickerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.homy-ticker-words-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.homy-ticker-item-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+.homy-ticker-word {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(38px, 4.8vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgb(75, 91, 99);
+  white-space: nowrap;
+}
+
+.homy-ticker-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(8, 11, 15);
+  margin: 0 32px;
+  flex-shrink: 0;
+}
+
+/* Center Expanding Media Card (Scales Up on Scroll) */
+.homy-highlighted-center-card {
+  position: relative;
+  z-index: 2;
+  width: 380px;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
+  will-change: transform, border-radius;
+  transform-origin: center center;
+  background-color: #080B0F;
+  flex-shrink: 0;
+}
+
+.homy-highlighted-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .homy-highlighted-center-card {
+    width: 280px;
+    height: 195px;
+  }
+
+  .homy-ticker-bullet {
+    margin: 0 18px;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* -------------------------------------------------------------
+   FAQ SECTION ("THINGS YOU SHOULD KNOW")
+------------------------------------------------------------- */
+.homy-faq-section {
+  position: relative;
+  z-index: 10;
+  background-color: #FFFFFF;
+  padding: 120px 24px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.homy-faq-container {
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 64px;
+}
+
+.homy-faq-left {
+  width: 420px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 120px;
+}
+
+.homy-faq-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.homy-faq-bullseye {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid #6C7D86;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homy-bullseye-inner {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #6C7D86;
+}
+
+.homy-faq-badge-text {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6C7D86;
+}
+
+.homy-faq-title {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(34px, 4vw, 50px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #080B0F;
+  margin: 0;
+}
+
+.homy-faq-desc {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5A666E;
+  max-width: 340px;
+  margin: 0;
+}
+
+.homy-faq-right {
+  flex: 1;
+  max-width: 720px;
+  width: 100%;
+}
+
+.homy-faq-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.homy-faq-card {
+  background-color: #F6F6F6;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+
+.homy-faq-card:hover {
+  background-color: #F1F1F1;
+}
+
+.homy-faq-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.homy-faq-question {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #080B0F;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.homy-faq-icon-box {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.homy-icon-bar {
+  position: absolute;
+  background-color: #080B0F;
+  border-radius: 2px;
+}
+
+.homy-icon-bar.horizontal {
+  width: 14px;
+  height: 1.8px;
+}
+
+.homy-icon-bar.vertical {
+  width: 1.8px;
+  height: 14px;
+  transform-origin: center;
+}
+
+.homy-faq-answer-collapse {
+  overflow: hidden;
+}
+
+.homy-faq-answer {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #55626B;
+  padding: 0 24px 22px;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------
+   HOMY LUXURY GRAND CTA & SITE FOOTER
+------------------------------------------------------------- */
+.homy-footer-section {
+  position: relative;
+  z-index: 10;
+  background-color: #FFFFFF;
+  padding: 32px 20px 48px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.homy-footer-card-container {
+  width: 100%;
+  max-width: 1240px;
+  background-color: #080B0F;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
+}
+
+/* Soft Cloud Layer at the top of Footer Card */
+.homy-footer-cloud-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 480px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.homy-footer-cloud-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0.95;
+}
+
+/* Content Area */
+.homy-footer-content-area {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* CTA Header */
+.homy-footer-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 640px;
+  padding: 0 24px;
+  z-index: 2;
+}
+
+.homy-footer-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50px;
+  padding: 6px 14px;
+  margin-bottom: 18px;
+}
+
+.homy-footer-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #7D8E9E;
+}
+
+.homy-footer-badge-text {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8E9FAA;
+  letter-spacing: 0.01em;
+}
+
+.homy-footer-cta-heading {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.homy-footer-cta-desc {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: clamp(14px, 1.4vw, 17px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 28px;
+  text-align: center;
+}
+
+.homy-cta-desc-br {
+  display: block;
+}
+
+.homy-footer-cta-btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.homy-footer-get-touch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #080B0F;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  padding: 10px 18px 10px 22px;
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.homy-footer-get-touch-btn:hover {
+  background-color: #FFFFFF;
+  color: #080B0F;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(255, 255, 255, 0.15);
+}
+
+.homy-footer-btn-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.homy-footer-get-touch-btn:hover .homy-footer-btn-icon {
+  background: rgba(8, 11, 15, 0.12);
+  transform: translateX(2px);
+}
+
+/* Mansion Stage & Reflection Area */
+.homy-footer-mansion-stage {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  overflow: visible;
+}
+
+.homy-footer-mansion-image-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.homy-footer-mansion-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Giant 3D Water Reflection HOMY Wordmark */
+.homy-giant-logo-reflection-wrap {
+  position: absolute;
+  bottom: 8%;
+  left: 0;
+  right: 0;
+  width: 86%;
+  max-width: 1036px;
+  margin: 0 auto;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.homy-giant-logo-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Bottom Dark Navigation Area */
+.homy-footer-nav-block {
+  position: relative;
+  z-index: 4;
+  background-color: #080B0F;
+  padding: 10px 48px 40px;
+  box-sizing: border-box;
+}
+
+.homy-footer-nav-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.homy-footer-brand-col {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.homy-footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.value-footer-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.homy-footer-brand-name {
+  color: #FFFFFF;
+}
+
+.homy-footer-tagline {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(245, 245, 245, 0.7);
+  margin: 0;
+}
+
+.homy-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.homy-social-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.homy-social-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.homy-footer-right-panels {
+  display: flex;
+  gap: 80px;
+}
+
+.homy-footer-col-title {
+  display: block;
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.homy-footer-menu,
+.homy-footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.homy-footer-menu a,
+.homy-footer-contact-list a,
+.homy-footer-contact-list span {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 14px;
+  color: rgba(245, 245, 245, 0.65);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.homy-footer-menu a:hover,
+.homy-footer-contact-list a:hover {
+  color: #FFFFFF;
+}
+
+.homy-footer-contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.homy-contact-icon {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.homy-footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 40px 0 24px;
+}
+
+.homy-footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 14px;
+  color: rgba(199, 199, 199, 0.75);
+}
+
+.homy-bottom-crafted {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(245, 245, 245, 0.8);
+}
+
+.homy-framer-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.homy-framer-badge:hover {
+  opacity: 1;
+}
+
+.homy-bottom-privacy {
+  color: rgba(245, 245, 245, 0.65);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.homy-bottom-privacy:hover {
+  color: #FFFFFF;
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .homy-impact-bento {
+    grid-template-columns: 1fr 1.3fr;
+    grid-template-rows: auto auto;
+  }
+
+  .homy-photo-card:last-child {
+    display: none; /* Clean fallback for medium tablet */
+  }
+
+  .homy-bento-stats-col {
+    height: auto;
+    gap: 12px;
+  }
+
+  .homy-stat-card {
+    height: 95px;
+  }
+}
+
+@media (max-width: 820px) {
+  .homy-nav-desktop {
+    display: none;
+  }
+
+  .homy-mobile-toggle {
+    display: flex;
+  }
+
+  .homy-mobile-drawer {
+    display: block;
+    position: absolute;
+    top: 84px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  .homy-mobile-links {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .homy-mobile-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-dark);
+  }
+
+  .homy-mobile-cta {
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .homy-impact-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .homy-impact-bento {
+    grid-template-columns: 1fr;
+  }
+
+  .homy-photo-card {
+    height: 280px;
+  }
+
+  .homy-photo-card:last-child {
+    display: block;
+  }
+
+  .homy-hero-section {
+    min-height: 1100px;
+    padding: 130px 16px 0;
+    gap: 32px;
+  }
+
+  .homy-hero-content {
+    gap: 8px;
+    padding: 0;
+  }
+
+  .homy-hero-mansion-wrapper {
+    padding: 0;
+  }
+
+  .homy-hero-ctas {
+    flex-direction: row;
+    width: 100%;
+    max-width: 340px;
+    gap: 10px;
+  }
+
+  .homy-hero-ctas .homy-action-btn {
+    flex: 1;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .homy-section-header-split {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .homy-service-cards-row {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .homy-service-card.card-active {
+    min-height: 480px;
+  }
+
+  .homy-service-card.card-inactive {
+    min-height: 180px;
+  }
+
+  .homy-listings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .homy-property-card {
+    height: 380px;
+  }
+
+  .homy-faq-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .homy-faq-left {
+    width: 100%;
+    position: static;
+  }
+
+  .homy-faq-right {
+    max-width: 100%;
+  }
+
+  /* Footer Mobile */
+  .homy-footer-section {
+    padding: 20px 12px 32px;
+  }
+
+  .homy-footer-content-area {
+    padding-top: 50px;
+  }
+
+  .homy-footer-nav-grid {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .homy-footer-nav-block {
+    padding: 10px 20px 32px;
+  }
+
+  .homy-footer-right-panels {
+    gap: 40px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 560px) {
+  .homy-footer-card-container {
+    border-radius: 20px;
+  }
+
+  .homy-footer-right-panels {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .homy-footer-bottom-bar {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .homy-giant-logo-reflection-wrap {
+    width: 96%;
+    bottom: 5%;
+  }
+
+  .homy-cta-desc-br {
+    display: none;
+  }
+}
